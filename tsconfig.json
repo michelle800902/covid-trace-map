@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "app",
+        "esModuleInterop": true,
+        "lib": [
+            "dom",
+            "esnext",
+            "scripthost"
+        ],
+        "jsx": "react",
+        "module": "commonjs",
+        "moduleResolution": "Node",
+        "paths": {
+            "@app/*": ["app/*"],
+            "@common/*": ["common_modules/*"],
+            "*": ["node_modules/*"]
+        },
+        "sourceMap": true,
+        "removeComments": true,
+        "target": "es6",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "resolveJsonModule": true,
+        "types": ["react", "jest"]
+    },
+    "exclude": [
+        "node_modules",
+        "__tests__",
+    ],
+    "include": [
+        "app/**/*",
+        "typings.d.ts"
+    ]
+}
