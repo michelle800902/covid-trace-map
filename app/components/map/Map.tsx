@@ -11,10 +11,12 @@ import styled from 'styled-components';
 import mapboxgl from 'mapbox-gl';
 import { isEmpty, pull, debounce, get } from 'lodash';
 import 'mapbox-gl/dist/mapbox-gl.css';
-// import './style.css';
 
 interface Props {
-    //
+    center: [number, number];
+    zoom: number;
+    minZoom: number;
+    maxZoom: number;
 }
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaHl1YW4xMyIsImEiOiJjanRkdjlwamUxODRkNGFwY2xhbHFkNmU4In0.5UKmSUsXVHTlCXpUWlyidg';
@@ -69,8 +71,10 @@ function Map(props: Props) {
         const mapInstance = new mapboxgl.Map({
             container: mapDOM.current,
             style: 'mapbox://styles/mapbox/light-v10',
-            center: [31.4606, 20.7927],
-            zoom: 1,
+            center: props.center,
+            zoom: props.zoom,
+            minZoom: props.minZoom,
+            maxZoom: props.maxZoom,
         });
         setMap(mapInstance);
     };
