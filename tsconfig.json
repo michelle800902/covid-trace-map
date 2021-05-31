@@ -14,7 +14,7 @@
         "module": "commonjs",
         "moduleResolution": "Node",
         "paths": {
-            "@app/*": ["app/*"],
+            "@app/*": ["*"],
             "@common/*": ["common_modules/*"],
             "*": ["node_modules/*"]
         },

@@ -32,7 +32,7 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js', '.json'],
     },
     node: {
-        fs: "empty"
+        fs: 'empty',
     },
     mode: 'development',
     module: {
@@ -71,7 +71,7 @@ module.exports = {
                                     require('postcss-import')(
                                         {
                                             path: ['app/styles'],
-                                        }
+                                        },
                                     ),
                                     require('postcss-mixins')({}),
                                     require('postcss-simple-vars')({ silent: true }),
