@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import GlobalStyle from '@common/globalStyle';
 import MapContainer from '@app/containers/map/MapContainer';
+import ToolbarContainer from '@app/containers/toolbar/ToolbarContainer';
 
 interface Props {
     //
@@ -15,6 +16,7 @@ function App(props: Props) {
         <AppWrapper className="wrapper">
             <GlobalStyle />
             <MapContainer />
+            <ToolbarContainer />
         </AppWrapper>
     );
 }

@@ -324,6 +324,7 @@ export default createGlobalStyle<Props>`
         --lineHeight: 1.5;
 
         /* Global colors */
+        --black: #000000;
         --dark-one: #333333;
         --dark-two: #222222;
         --dark-hover: #2a2a2a;
@@ -335,8 +336,8 @@ export default createGlobalStyle<Props>`
         --white-two: #eeeeee;
         --white-three: #f7f7f7;
         --disabled: #cccccc;
-        --pagination: #666666;
-        --nasty-green: #73a63f;
+        --blue-one: #3196ff;
+        --green-one: #73a63f;
         --success: hsl(var(--success-hsl));
         --success-lighter: hsl(var(--success-hsl-h), var(--success-hsl-s), calc(var(--success-hsl-l) + 5%));
         --success-darker: hsl(var(--success-hsl-h), var(--success-hsl-s), calc(var(--success-hsl-l) - 5%));
