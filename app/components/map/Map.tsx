@@ -8,8 +8,10 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import mapboxgl from 'mapbox-gl';
 import { isEmpty, pull, debounce, get } from 'lodash';
+import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 interface Props {
@@ -76,6 +78,12 @@ function Map(props: Props) {
             minZoom: props.minZoom,
             maxZoom: props.maxZoom,
         });
+        mapInstance.addControl(
+            new MapboxGeocoder({
+                mapboxgl,
+                accessToken: mapboxgl.accessToken,
+            }),
+        );
         setMap(mapInstance);
     };
 
