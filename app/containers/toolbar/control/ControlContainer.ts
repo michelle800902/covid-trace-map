@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { TRootStore } from '@app/reducers/index';
-import Time from '@app/components/toolbar/time/Time';
+import Control from '@app/components/toolbar/control/Control';
 
 const mapStateToProps = (state: TRootStore) => ({
 
@@ -10,9 +10,9 @@ const mapDispatchToProps = (dispatch) => ({
 
 });
 
-const TimeContainer = connect(
+const ControlContainer = connect(
     mapStateToProps,
     mapDispatchToProps,
-)(Time);
+)(Control);
 
-export default TimeContainer;
+export default ControlContainer;

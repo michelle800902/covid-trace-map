@@ -5,14 +5,14 @@ interface Props {
     //
 }
 
-const BaseWrapper = styled.div`
-    i {
+const ImportWrapper = styled.div`
+    > i {
         width: 100%;
-        height: 50px;
+        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 24px;
+        font-size: 18px;
         color: var(--white-two);
         &:hover {
             color: var(--blue-one);
@@ -20,12 +20,12 @@ const BaseWrapper = styled.div`
     }
 `;
 
-function Base(props: Props) {
+function Import(props: Props) {
     return (
-        <BaseWrapper>
-            <i className="icon-mapsource" />
-        </BaseWrapper>
+        <ImportWrapper>
+            <i className="icon-upload" />
+        </ImportWrapper>
     );
 }
 
-export default Base;
+export default Import;

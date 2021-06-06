@@ -1,13 +1,5 @@
 const initialState = {
-    time: {
-
-    },
-    base: {
-
-    },
-    zoom: {
-
-    },
+    activeIcon: '',
 };
 
 const setToolbar = (state = initialState, action): typeof initialState => {

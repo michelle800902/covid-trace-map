@@ -5,14 +5,14 @@ interface Props {
     //
 }
 
-const TimeWrapper = styled.div`
-    i {
+const ExportWrapper = styled.div`
+    > i {
         width: 100%;
-        height: 50px;
+        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 24px;
+        font-size: 18px;
         color: var(--white-two);
         &:hover {
             color: var(--blue-one);
@@ -20,12 +20,12 @@ const TimeWrapper = styled.div`
     }
 `;
 
-function Time(props: Props) {
+function Export(props: Props) {
     return (
-        <TimeWrapper>
-            <i className="icon-time" />
-        </TimeWrapper>
+        <ExportWrapper>
+            <i className="icon-download" />
+        </ExportWrapper>
     );
 }
 
-export default Time;
+export default Export;

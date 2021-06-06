@@ -5,7 +5,7 @@ interface Props {
     //
 }
 
-const ZoomWrapper = styled.div`
+const PolygonWrapper = styled.div`
     > i {
         width: 100%;
         height: 40px;
@@ -20,13 +20,12 @@ const ZoomWrapper = styled.div`
     }
 `;
 
-function Zoom(props: Props) {
+function Polygon(props: Props) {
     return (
-        <ZoomWrapper>
-            <i className="icon-zoom_in" />
-            <i className="icon-zoom_out" />
-        </ZoomWrapper>
+        <PolygonWrapper>
+            <i className="icon-polygon" />
+        </PolygonWrapper>
     );
 }
 
-export default Zoom;
+export default Polygon;

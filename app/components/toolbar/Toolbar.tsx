@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import TimeContainer from '@app/containers/toolbar/time/TimeContainer';
-import BaseContainer from '@app/containers/toolbar/base/BaseContainer';
+import ControlContainer from '@app/containers/toolbar/control/ControlContainer';
+import LocationContainer from '@app/containers/toolbar/location/LocationContainer';
+import PolygonContainer from '@app/containers/toolbar/polygon/PolygonContainer';
+import RulerContainer from '@app/containers/toolbar/ruler/RulerContainer';
+import ImportContainer from '@app/containers/toolbar/import/ImportContainer';
+import ExportContainer from '@app/containers/toolbar/export/ExportContainer';
+import BaseMapContainer from '@app/containers/toolbar/baseMap/BaseMapContainer';
 import ZoomContainer from '@app/containers/toolbar/zoom/ZoomContainer';
 
 interface Props {
@@ -33,8 +38,13 @@ function Toolbar(props: Props) {
                 COVID-19
                 TraceMap
             </Logo>
-            <TimeContainer />
-            <BaseContainer />
+            <ControlContainer />
+            <LocationContainer />
+            <PolygonContainer />
+            <RulerContainer />
+            {/* <ImportContainer />
+            <ExportContainer /> */}
+            <BaseMapContainer />
             <ZoomContainer />
         </ToolbarWrapper>
     );

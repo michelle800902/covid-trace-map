@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { TRootStore } from '@app/reducers/index';
-import Base from '@app/components/toolbar/base/Base';
+import Ruler from '@app/components/toolbar/ruler/Ruler';
 
 const mapStateToProps = (state: TRootStore) => ({
 
@@ -10,9 +10,9 @@ const mapDispatchToProps = (dispatch) => ({
 
 });
 
-const BaseContainer = connect(
+const RulerContainer = connect(
     mapStateToProps,
     mapDispatchToProps,
-)(Base);
+)(Ruler);
 
-export default BaseContainer;
+export default RulerContainer;
