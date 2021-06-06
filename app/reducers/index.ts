@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import setMap from './map/setMap';
+import setLayer from './map/layer/setLayer';
 import setToolbar from './toolbar/setToolbar';
 import setControl from './toolbar/control/setControl';
 import setLocation from './toolbar/location/setLocation';
@@ -12,6 +13,7 @@ import setZoom from './toolbar/zoom/setZoom';
 
 const appStore = combineReducers({
     setMap,
+    setLayer,
     setToolbar,
     setControl,
     setLocation,
