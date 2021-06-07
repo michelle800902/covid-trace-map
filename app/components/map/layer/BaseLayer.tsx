@@ -37,13 +37,6 @@ function BaseLayer(props: Props) {
         if (map && eventHandler) {
             const baseLayerObj = getCurrentBaseLayerObj(props.mapStyle);
             eventHandler.addSource(config.id, config.source(baseLayerObj.url));
-            eventHandler.addLayer(mapConstants.layer.background, {
-                id: mapConstants.layer.background,
-                type: mapboxConstants.layerType.background,
-                paint: {
-                    'background-color': '#f2f2f2',
-                },
-            });
             eventHandler.addLayer(config.id, config.layer);
         }
         return () => {

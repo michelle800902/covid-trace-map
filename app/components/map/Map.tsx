@@ -28,7 +28,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaHl1YW4xMyIsImEiOiJjanRkdjlwamUxODRkNGFwY2xhb
 mapboxgl.maxParallelImageRequests = 5;
 
 const LayerOrder = [
-    mapConstants.layer.background,
     mapConstants.layer.baseLayer,
     mapConstants.layer.building,
 ];

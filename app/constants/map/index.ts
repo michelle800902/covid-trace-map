@@ -1,5 +1,4 @@
 export const layer = {
-    background: 'background',
     building: 'building',
     baseLayer: 'baseLayer',
     draw: 'draw',

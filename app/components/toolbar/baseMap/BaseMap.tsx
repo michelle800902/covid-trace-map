@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Radio from '@common/radio/Radio';
+import { IBaseMapDataItem } from '@app/reducers/toolbar/baseMap/setBaseMap';
 
 interface Props {
-    //
+    data: IBaseMapDataItem[];
+    selected: string;
 }
 
 interface StyleProps {
@@ -31,13 +33,14 @@ const BaseMapPanel = styled.div<StyleProps>`
     margin-top: -50px;
     border-radius: 0 6px 6px 0;
     background-color: var(--dark-one);
+    white-space: nowrap;
     transition: .3s;
     overflow: hidden;
 `;
 const PanelTitle = styled.p`
     width: 100%;
     padding: 6px;
-    white-space: nowrap;
+    font-size: 14px;
 `;
 const PanelContent = styled.div`
     padding: 6px;
@@ -57,11 +60,21 @@ function BaseMap(props: Props) {
                 onClick={onClickBaseIcon}
             />
             <BaseMapPanel active={active}>
-                <PanelTitle>Base Map Layer</PanelTitle>
+                <PanelTitle>Map Style</PanelTitle>
                 <PanelContent>
-                    <Radio active={true} onClick={() => {}}>1</Radio>
-                    <Radio active={true} onClick={() => {}}>2</Radio>
-                    <Radio active={true} onClick={() => {}}>3</Radio>
+                    {
+                        props.data.map((d) => (
+                            <Radio
+                                key={d.id}
+                                active={d.name === props.selected}
+                                onClick={(item) => {
+                                    console.log(item);
+                                }}
+                            >
+                                {d.name}
+                            </Radio>
+                        ))
+                    }
                 </PanelContent>
             </BaseMapPanel>
         </BaseMapWrapper>
