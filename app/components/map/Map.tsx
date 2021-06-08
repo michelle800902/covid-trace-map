@@ -110,7 +110,7 @@ function Map(props: Props) {
         if ((isLayerExist(map, nextLayerId) || isEmpty(nextLayerId)) && !isLayerExist(map, layerConfig.id)) map.addLayer(layerConfig, nextLayerId);
     };
 
-    const reloadSource = (map, id) => { // change params
+    const reloadSource = (map, id: string) => { // change params
         if (!map) return;
         const styleSourceCaches = get(map, `style.sourceCaches.${id}`, {});
         if (styleSourceCaches.clearTiles instanceof Function) styleSourceCaches.clearTiles();
@@ -119,11 +119,11 @@ function Map(props: Props) {
         map.triggerRepaint();
     };
 
-    const removeSource = (map, id) => {
+    const removeSource = (map, id: string) => {
         if (map && isSourceExist(map, id)) map.removeSource(id);
     };
 
-    const removeLayer = (map, id) => {
+    const removeLayer = (map, id: string) => {
         if (map && isLayerExist(map, id)) map.removeLayer(id);
     };
 
@@ -142,10 +142,15 @@ function Map(props: Props) {
         addLayer(map, id, layerConfig);
     };
 
-    const setLayerVisible = (map, id, visible) => {
+    const setLayerVisible = (map, id: string, visible: boolean) => {
         if (!map || !isLayerExist(map, id)) return;
         const visibility = visible ? 'visible' : 'none';
         if (map.getLayoutProperty(id, 'visibility') !== visibility) map.setLayoutProperty(id, 'visibility', visibility);
+    };
+
+    const setMapStyle = (map, url: string) => {
+        if (!map) return;
+        map.setStyle(url);
     };
 
     const getOpacity = (layer) => {
@@ -169,22 +174,22 @@ function Map(props: Props) {
             removeSource: (id: string) => removeSource(map, id),
             removeLayer: (id: string) => removeLayer(map, id),
             setLayerVisible: (id: string, visible: boolean) => setLayerVisible(map, id, visible),
+            setMapStyle: (url: string) => setMapStyle(map, url),
         };
     };
 
     const createMap = () => {
         const mapInstance = new mapboxgl.Map({
             container: mapDOM.current,
-            // style: 'mapbox://styles/mapbox/light-v10',
             center: props.center,
             zoom: props.zoom,
             minZoom: props.minZoom,
             maxZoom: props.maxZoom,
-            // attributionControl: false,
-            // dragRotate: false,
-            // pitch: 0,
-            // bearing: 0,
-            // antialias: true,
+            attributionControl: false,
+            dragRotate: false,
+            pitch: 0,
+            bearing: 0,
+            antialias: true,
         });
 
         mapInstance.addControl(

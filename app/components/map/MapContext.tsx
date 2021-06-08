@@ -16,6 +16,7 @@ interface EventHandler {
     removeSource: (id: string) => void,
     removeLayer: (id: string) => void,
     setLayerVisible: (id: string, visible: boolean) => void;
+    setMapStyle: (url: string) => void;
 }
 
 const MapContext = createContext<MapInterface>(undefined);

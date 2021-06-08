@@ -5,7 +5,7 @@ export const layer = {
     polygon: 'polygon',
 };
 
-export const baseLayer = [
+export const mapStlyes = [
     {
         name: 'Google map',
         type: 'raster',

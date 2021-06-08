@@ -8,7 +8,7 @@ import setPolygon from './toolbar/polygon/setPolygon';
 import setRuler from './toolbar/ruler/setRuler';
 import setImport from './toolbar/import/setImport';
 import setExport from './toolbar/export/setExport';
-import setBaseMap from './toolbar/baseMap/setBaseMap';
+import setMapStyle from './toolbar/mapStyle/setMapStyle';
 import setZoom from './toolbar/zoom/setZoom';
 
 const appStore = combineReducers({
@@ -21,7 +21,7 @@ const appStore = combineReducers({
     setRuler,
     setImport,
     setExport,
-    setBaseMap,
+    setMapStyle,
     setZoom,
 });
 

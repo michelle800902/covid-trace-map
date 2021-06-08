@@ -6,7 +6,7 @@ import PolygonContainer from '@app/containers/toolbar/polygon/PolygonContainer';
 import RulerContainer from '@app/containers/toolbar/ruler/RulerContainer';
 import ImportContainer from '@app/containers/toolbar/import/ImportContainer';
 import ExportContainer from '@app/containers/toolbar/export/ExportContainer';
-import BaseMapContainer from '@app/containers/toolbar/baseMap/BaseMapContainer';
+import MapStyleContainer from '@app/containers/toolbar/mapStyle/MapStyleContainer';
 import ZoomContainer from '@app/containers/toolbar/zoom/ZoomContainer';
 
 interface Props {
@@ -44,7 +44,7 @@ function Toolbar(props: Props) {
             <RulerContainer />
             {/* <ImportContainer />
             <ExportContainer /> */}
-            <BaseMapContainer />
+            <MapStyleContainer />
             <ZoomContainer />
         </ToolbarWrapper>
     );

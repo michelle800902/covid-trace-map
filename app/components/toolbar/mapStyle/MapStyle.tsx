@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Radio from '@common/radio/Radio';
-import { IBaseMapDataItem } from '@app/reducers/toolbar/baseMap/setBaseMap';
+import { IMapStyleDataItem } from '@app/reducers/toolbar/mapStyle/setMapStyle';
 
 interface Props {
-    data: IBaseMapDataItem[];
-    selected: string;
+    data: IMapStyleDataItem[];
+    selection: string;
+    changeMapStyleSelection: (selection: string) => void;
 }
 
 interface StyleProps {
     active: boolean;
 }
-const BaseMapWrapper = styled.div<StyleProps>`
+const MapStyleWrapper = styled.div<StyleProps>`
     > i {
         width: 100%;
         height: 40px;
@@ -25,7 +26,7 @@ const BaseMapWrapper = styled.div<StyleProps>`
         }
     }
 `;
-const BaseMapPanel = styled.div<StyleProps>`
+const MapStylePanel = styled.div<StyleProps>`
     visibility: ${(props) => (props.active ? 'visible' : 'hidden')};
     width: ${(props) => (props.active ? '150px' : 0)};
     position: absolute;
@@ -46,7 +47,7 @@ const PanelContent = styled.div`
     padding: 6px;
 `;
 
-function BaseMap(props: Props) {
+function MapStyle(props: Props) {
     const [active, setActive] = useState<boolean>(false);
 
     const onClickBaseIcon = () => {
@@ -54,31 +55,29 @@ function BaseMap(props: Props) {
     };
 
     return (
-        <BaseMapWrapper active={active}>
+        <MapStyleWrapper active={active}>
             <i
                 className="icon-layer"
                 onClick={onClickBaseIcon}
             />
-            <BaseMapPanel active={active}>
+            <MapStylePanel active={active}>
                 <PanelTitle>Map Style</PanelTitle>
                 <PanelContent>
                     {
                         props.data.map((d) => (
                             <Radio
                                 key={d.id}
-                                active={d.name === props.selected}
-                                onClick={(item) => {
-                                    console.log(item);
-                                }}
+                                active={d.name === props.selection}
+                                onClick={(name: string) => props.changeMapStyleSelection(name)}
                             >
                                 {d.name}
                             </Radio>
                         ))
                     }
                 </PanelContent>
-            </BaseMapPanel>
-        </BaseMapWrapper>
+            </MapStylePanel>
+        </MapStyleWrapper>
     );
 }
 
-export default BaseMap;
+export default MapStyle;

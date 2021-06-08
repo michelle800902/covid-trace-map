@@ -1,4 +1,4 @@
-export const baseMapData = [
+export const mapStyleData = [
     {
         id: 0,
         name: 'Mapbox Light',
@@ -13,10 +13,6 @@ export const baseMapData = [
     },
     {
         id: 3,
-        name: 'Mapbox Outdoors',
-    },
-    {
-        id: 4,
         name: 'Mapbox Satellite',
     },
 ];

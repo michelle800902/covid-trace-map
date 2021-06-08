@@ -1,7 +1,9 @@
+import { mapStyleData } from '@app/constants/toolbar';
+
 const initialState = {
     baseLayer: {
-        mapStyle: 'Google map',
-        visible: true,
+        mapStyle: mapStyleData[0].name as string,
+        visible: true as boolean,
     },
 };
 
