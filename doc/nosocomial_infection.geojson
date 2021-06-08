@@ -1,0 +1,6 @@
+{"type":"FeatureCollection", "features":[
+{"type":"Feature","geometry":{"type":"Point","coordinates":[121.4529059,24.9971306,0]},"properties":{"name":"亞東紀念醫院 院內感染\n","description":"https://www.cna.com.tw/news/firstnews/202105185006.aspx"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[120.35336,22.625823,0]},"properties":{"name":"仁惠婦幼醫院 院內感染\n","description":"https://www.cna.com.tw/news/firstnews/202105200210.aspx"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[121.5068348,25.03553,0]},"properties":{"name":"臺北市立聯合醫院和平院區 院內感染\n","description":"https://www.cna.com.tw/news/firstnews/202105200210.aspx"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[121.5576613,25.0543293,0]},"properties":{"name":"三軍總醫院松山分院 院內感染\n","description":"https://www.cna.com.tw/news/firstnews/202105200210.aspx"}}
+]}
