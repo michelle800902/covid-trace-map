@@ -1,12 +1,12 @@
 import { useEffect, useContext } from 'react';
 import * as mapConstants from '@app/constants/map';
-import * as mapboxConstants from '../MapboxConstants';
 import MapContext from '../MapContext';
 
 interface Props {
     mapStyle: string;
 }
-interface IBaseLayerObj {
+
+interface IMapStyleObj {
     name: string;
     type: string;
     url: string;
@@ -15,14 +15,10 @@ interface IBaseLayerObj {
 function BaseLayer(props: Props) {
     const { map, eventHandler } = useContext(MapContext);
 
-    const getCurrentStyleConfig = (mapStyleName: string): IBaseLayerObj => (
-        mapConstants.mapStlyes.find((obj) => obj.name === mapStyleName)
-    );
-
     useEffect(() => {
         if (!map || !eventHandler) return;
-        const currentStyleConfig = getCurrentStyleConfig(props.mapStyle);
-        eventHandler.setMapStyle(currentStyleConfig.url);
+        const currentMapStyleObj = mapConstants.mapStlyes.find((obj: IMapStyleObj) => obj.name === props.mapStyle);
+        eventHandler.setMapStyle(currentMapStyleObj.url);
     }, [props.mapStyle]);
 
     return null;

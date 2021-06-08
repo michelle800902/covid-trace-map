@@ -346,6 +346,10 @@ export default createGlobalStyle<Props>`
         --danger-darker: hsl(var(--danger-hsl-h), var(--danger-hsl-s), calc(var(--danger-hsl-l) - 5%));
 
         /* Theme */
+        --blue-hsl-h: 211;
+        --blue-hsl-s: 100%;
+        --blue-hsl-l: 60%;
+
         ${(props) => (`
             --themeColor-hsl-h: var(--${props.theme}-hsl-h);
             --themeColor-hsl-s: var(--${props.theme}-hsl-s);

@@ -14,7 +14,7 @@ const AppWrapper = styled.div`
 function App(props: Props) {
     return (
         <AppWrapper className="wrapper">
-            <GlobalStyle />
+            <GlobalStyle theme="blue" />
             <MapContainer />
             <ToolbarContainer />
         </AppWrapper>
