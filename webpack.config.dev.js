@@ -26,6 +26,7 @@ module.exports = {
     },
     resolve: {
         alias: {
+            '@doc': path.resolve(__dirname, './doc'),
             '@app': path.resolve(__dirname, './app'),
             '@common': path.resolve(__dirname, './app/common_modules'),
         },
@@ -97,6 +98,11 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'raw-loader',
             },
+            {
+                test: /\.(json|geojson)$/,
+                exclude: /node_modules/,
+                loader: 'json-loader',
+            },
         ],
     },
     plugins: [
@@ -119,10 +125,6 @@ module.exports = {
             {
                 from: 'app/favicon.ico',
                 to: 'favicon.ico',
-            },
-            {
-                from: 'doc/api',
-                to: 'api',
             },
         ]),
         new MiniCssExtractPlugin({

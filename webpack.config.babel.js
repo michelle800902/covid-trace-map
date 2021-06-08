@@ -117,10 +117,6 @@ module.exports = {
                 from: 'app/favicon.ico',
                 to: 'favicon.ico',
             },
-            {
-                from: 'doc/api',
-                to: 'api',
-            },
         ]),
         new MiniCssExtractPlugin({
             filename: 'static/styles.css',

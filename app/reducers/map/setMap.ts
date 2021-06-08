@@ -1,8 +1,8 @@
 import types from '@app/actions/map/types';
 
 const initialState = {
-    center: [31.4606, 20.7927],
-    zoom: 1,
+    center: [120.88, 23.72],
+    zoom: 7,
     maxZoom: 18,
     minZoom: 1,
 };

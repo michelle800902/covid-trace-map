@@ -13,6 +13,7 @@ import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import * as mapConstants from '@app/constants/map';
 import BaseLayerContainer from '@app/containers/map/layer/BaseLayerContainer';
+import FootprintLayerContainer from '@app/containers/map/layer/FootprintLayerContainer';
 import MapContext from './MapContext';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -28,8 +29,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiaHl1YW4xMyIsImEiOiJjanRkdjlwamUxODRkNGFwY2xhb
 mapboxgl.maxParallelImageRequests = 5;
 
 const LayerOrder = [
-    mapConstants.layer.baseLayer,
-    mapConstants.layer.building,
+    // mapConstants.layer.baseLayer,
+    // mapConstants.layer.building,
 ];
 
 const MapWrapper = styled.div`
@@ -274,6 +275,7 @@ function Map(props: Props) {
                         }}
                     >
                         <BaseLayerContainer />
+                        <FootprintLayerContainer />
                     </MapContext.Provider>
                 )
             }

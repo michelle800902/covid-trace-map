@@ -5,7 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const config = {
+module.exports = {
     devtool: 'eval-source-map',
     entry: {
         index: './app/index.tsx',
@@ -16,6 +16,7 @@ const config = {
     },
     resolve: {
         alias: {
+            '@doc': path.resolve(__dirname, './doc'),
             '@app': path.resolve(__dirname, './app'),
             '@common': path.resolve(__dirname, './app/common_modules'),
         },
@@ -87,6 +88,11 @@ const config = {
                 exclude: /node_modules/,
                 loader: 'raw-loader',
             },
+            {
+                test: /\.(json|geojson)$/,
+                exclude: /node_modules/,
+                loader: 'json-loader',
+            },
         ],
     },
     optimization: {
@@ -111,10 +117,6 @@ const config = {
                 from: 'app/favicon.ico',
                 to: 'favicon.ico',
             },
-            {
-                from: 'doc/api',
-                to: 'api',
-            },
         ]),
         new MiniCssExtractPlugin({
             filename: 'css/[name]/styles.css',
@@ -126,5 +128,3 @@ const config = {
         }),
     ],
 };
-
-module.exports = [config];
