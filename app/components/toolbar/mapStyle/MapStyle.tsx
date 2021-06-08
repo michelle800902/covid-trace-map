@@ -20,9 +20,9 @@ const MapStyleWrapper = styled.div<StyleProps>`
         align-items: center;
         justify-content: center;
         font-size: 18px;
-        color: ${(props) => (props.active ? 'var(--blue-one)' : 'var(--white-two)')};
+        color: ${(props) => (props.active ? 'var(--themeColor)' : 'var(--white-two)')};
         &:hover {
-            color: var(--blue-one);
+            color: var(--themeColor);
         }
     }
 `;

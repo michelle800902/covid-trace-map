@@ -15,7 +15,7 @@ const PolygonWrapper = styled.div`
         font-size: 18px;
         color: var(--white-two);
         &:hover {
-            color: var(--blue-one);
+            color: var(--themeColor);
         }
     }
 `;
