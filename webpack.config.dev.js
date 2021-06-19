@@ -21,7 +21,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'js/[name]/bundle.js',
+        filename: 'js/bundle.js',
         publicPath: '/',
     },
     resolve: {
@@ -89,7 +89,7 @@ module.exports = {
                     loader: 'url-loader',
                     options: {
                         limit: 20480,
-                        name: 'media/index/[name].[ext]',
+                        name: 'media/[name].[ext]',
                     },
                 },
             },
@@ -128,7 +128,7 @@ module.exports = {
             },
         ]),
         new MiniCssExtractPlugin({
-            filename: 'css/[name]/styles.css',
+            filename: 'css/styles.css',
         }),
         new webpack.DefinePlugin({
             'process.env': {

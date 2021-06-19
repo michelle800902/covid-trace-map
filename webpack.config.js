@@ -113,6 +113,21 @@ module.exports = {
         ],
     },
     plugins: [
+        new HtmlWebpackPlugin({
+            template: 'app/index.html',
+            filename: 'index.html',
+            chunks: ['index'],
+            inject: 'body',
+            minify: {
+                collapseWhitespace: true,
+                conservativeCollapse: true,
+                decodeEntities: true,
+                minifyCSS: false,
+                minifyJS: false,
+                removeComments: true,
+                removeScriptTypeAttributes: true,
+            },
+        }),
         new CopyWebpackPlugin([
             {
                 from: 'app/favicon.ico',
@@ -126,10 +141,6 @@ module.exports = {
             'process.env': {
                 NODE_ENV: JSON.stringify(process.env.NODE_ENV),
             },
-        }),
-        new HtmlWebpackPlugin({
-            template: 'app/index.html',
-            filename: 'index.html',
         }),
     ],
 };
