@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -11,8 +12,8 @@ module.exports = {
         index: './app/index.tsx',
     },
     output: {
-        path: path.resolve(__dirname, '../COVID-19-TraceMap/src/main/resources/static'),
-        filename: 'js/[name]/bundle.js',
+        path: path.resolve(__dirname, './build'),
+        filename: 'js/bundle.js',
     },
     resolve: {
         alias: {
@@ -79,7 +80,7 @@ module.exports = {
                     loader: 'url-loader',
                     options: {
                         limit: 20480,
-                        name: 'media/index/[name].[ext]',
+                        name: 'media/[name].[ext]',
                     },
                 },
             },
@@ -119,12 +120,16 @@ module.exports = {
             },
         ]),
         new MiniCssExtractPlugin({
-            filename: 'css/[name]/styles.css',
+            filename: 'css/styles.css',
         }),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify(process.env.NODE_ENV),
             },
+        }),
+        new HtmlWebpackPlugin({
+            template: 'app/index.html',
+            filename: 'index.html',
         }),
     ],
 };

@@ -1,5 +1,6 @@
 {
-    "name": "covid19_tracemap",
+    "homepage": "https://michelle800902.github.io/COVID-19-TraceMap",
+    "name": "covid-19-tracemap",
     "version": "2021.1.0",
     "description": "Trace Map for COVID-19",
     "main": "webpack.config.js",
@@ -16,7 +17,9 @@
         "release:patch": "standard-version --release-as patch",
         "release:minor": "standard-version --release-as minor",
         "release:major": "standard-version --release-as major",
-        "release:push:upstream": "git push --follow-tags upstream HEAD:develop"
+        "release:push:upstream": "git push --follow-tags upstream HEAD:develop",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "repository": {
         "type": "git",
@@ -103,6 +106,7 @@
         "eslint-plugin-react": "7.23.2",
         "eslint-plugin-react-hooks": "4.0.8",
         "file-loader": "1.1.11",
+        "gh-pages": "^3.2.2",
         "html-webpack-plugin": "3.2.0",
         "jest": "24.8.0",
         "jest-canvas-mock": "2.1.0",
