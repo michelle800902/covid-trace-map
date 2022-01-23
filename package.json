@@ -1,6 +1,6 @@
 {
-    "homepage": "https://michelle800902.github.io/COVID-19-TraceMap",
-    "name": "covid-19-tracemap",
+    "homepage": "https://michelle800902.github.io/covid-trace-map",
+    "name": "covid-trace-map",
     "version": "2021.1.0",
     "description": "Trace Map for COVID-19",
     "main": "webpack.config.js",
@@ -23,7 +23,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git@github.com:michelle800902/COVID-19-TraceMap.git"
+        "url": "git@github.com:michelle800902/covid-trace-map.git"
     },
     "author": "michellechen",
     "license": "ISC",
